@@ -8,3 +8,7 @@ export type User = {
   name: string | null,
   avatar: string | null
 }
+
+export type RoomCodeProps = {
+  code: string;
+}
