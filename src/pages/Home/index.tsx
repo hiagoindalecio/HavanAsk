@@ -63,6 +63,10 @@ export function Home() {
               <img src={googleIconImg} alt="Logo da Google" />
               Crie sua sala com o Google
             </button>
+            <button onClick={handleCreateRoom} className="create-room">
+              <img src={googleIconImg} alt="Logo do Outlook" />
+              Crie sua sala com o Outlook
+            </button>
             <div className="separator">ou entre em uma sala</div>
             <form onSubmit={handleJoinRoom}>
               <input 
