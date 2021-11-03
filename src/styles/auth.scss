@@ -93,13 +93,14 @@
       }
     }
   }
-
+  .logo-img {
+    margin-bottom: 64px;
+  }
   .create-room {
-    margin-top: 64px;
+    margin-top: 24px;
     height: 50px;
     border-radius: 8px;
     font-weight: 400;
-    background: #ea4335;
     color: #FFF;
 
     display: flex;
@@ -118,6 +119,14 @@
     }
 
     transition: filter 0.4s;
+  }
+
+  .google-button {
+    background: #f52409;
+  }
+
+  .microsoft-button {
+    background: #0f1ddf;
   }
 
   .separator {

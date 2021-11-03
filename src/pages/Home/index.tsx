@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 import illustrationImg from '../../assets/images/illustration.svg';
 import logoImg from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
+import microsoftIconImg from '../../assets/images/microsoft-icon.svg';
 
 import '../../styles/auth.scss';
 import { Button } from '../../components/Button';
@@ -58,14 +59,14 @@ export function Home() {
         </aside>
         <main>
           <div className="main-content">
-            <img src={logoImg} alt="Letmeask" />
-            <button onClick={handleCreateRoom} className="create-room">
+            <img src={logoImg} alt="Letmeask" className="logo-img" />
+            <button onClick={handleCreateRoom} className="create-room google-button">
               <img src={googleIconImg} alt="Logo da Google" />
               Crie sua sala com o Google
             </button>
-            <button onClick={handleCreateRoom} className="create-room">
-              <img src={googleIconImg} alt="Logo do Outlook" />
-              Crie sua sala com o Outlook
+            <button onClick={handleCreateRoom} className="create-room microsoft-button">
+              <img src={microsoftIconImg} alt="Logo da Microsoft" />
+              Crie sua sala com a Microsoft
             </button>
             <div className="separator">ou entre em uma sala</div>
             <form onSubmit={handleJoinRoom}>

@@ -2,6 +2,7 @@ import { ReactNode } from "react"
 
 export type AuthContextData = {
   signWithGoogle(): Promise<boolean>;
+  signWithMicrosoft(): Promise<boolean>;
   user: User | null;
 }
 

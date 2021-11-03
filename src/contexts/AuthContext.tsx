@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import { AuthContextData, User } from '../types/types';
 
 import { auth, firebase } from '../services/firebase';
+import { OAuthProvider } from "firebase/auth";
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
@@ -55,8 +56,34 @@ export const AuthProvider: React.FC = ({ children }) => {
     })
   }
 
+  async function signWithMicrosoft(): Promise<boolean> {
+    const provider = new OAuthProvider('microsoft.com');
+
+    return new Promise(async (resolve) => {
+      auth.signInWithPopup(provider).then(result => {
+        if (result.user) {
+          const { displayName, photoURL, uid } = result.user;
+
+          if(!displayName || !photoURL)
+            throw new Error('Missing information from Google Account.');
+
+          setUser({
+            id: uid,
+            name: displayName,
+            avatar: photoURL
+          });
+          resolve(true);
+        }
+        else {
+          setUser(null);
+          resolve(false);
+        }
+      });
+    })
+  }
+
   return (
-    <AuthContext.Provider value={{ signWithGoogle, user }}>
+    <AuthContext.Provider value={{ signWithGoogle, signWithMicrosoft, user }}>
       { children }
     </AuthContext.Provider>
   );
