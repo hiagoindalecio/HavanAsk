@@ -9,8 +9,7 @@
 
   aside {
     flex: 7;
-
-    background: #835afd;
+    background: #1101ff;
     color: #FFF;
     
     display: flex;
@@ -89,13 +88,24 @@
       margin-top: 16px;
 
       a {
-        color: #e559f9;
+        color: #6872ff;
       }
     }
   }
+
   .logo-img {
     margin-bottom: 64px;
   }
+
+  .havan-labs {
+    margin-bottom: 64px;
+  }
+
+  .ask-logo {
+    color: #002A5D;
+    font-size: 64px;
+  }
+
   .create-room {
     margin-top: 24px;
     height: 50px;

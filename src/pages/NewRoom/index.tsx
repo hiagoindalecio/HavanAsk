@@ -1,8 +1,5 @@
 import { Link, useHistory } from 'react-router-dom';
 
-import illustrationImg from '../../assets/images/illustration.svg';
-import logoImg from '../../assets/images/logo.svg';
-
 import '../../styles/auth.scss';
 
 import { Button } from '../../components/Button';
@@ -37,11 +34,14 @@ export function NewRoom() {
     return (
       <div id="page-auth">
         <aside>
-          <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
+        <img src="https://cdn.havan.com.br/assets/images/hlabs-w.svg" alt="Ilustração do Havan Labs" className="havan-labs" />
         </aside>
         <main>
           <div className="main-content">
-            <img src={logoImg} alt="Letmeask" />
+            <div className="logo-img">
+              <img src="https://cdn.havan.com.br/assets/images/logo-havan-slim-b.svg" alt="HavanAsk" />
+              <h1 className="ask-logo">ASK</h1>
+            </div>
             <h3>{user?.name}</h3>
             <h2>Criar uma nova sala</h2>
             <form onSubmit={handleCreateRoom}>

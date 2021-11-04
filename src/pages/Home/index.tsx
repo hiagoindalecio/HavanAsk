@@ -1,7 +1,4 @@
 import { useHistory } from 'react-router-dom';
-import illustrationImg from '../../assets/images/illustration.svg';
-import logoImg from '../../assets/images/logo.svg';
-import googleIconImg from '../../assets/images/google-icon.svg';
 import microsoftIconImg from '../../assets/images/microsoft-icon.svg';
 
 import '../../styles/auth.scss';
@@ -37,7 +34,7 @@ export function Home() {
       const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
       if (!roomRef.exists()) {
-        alert('Room does not exists.');
+        alert('A sala não existe');
         return;
       }
 
@@ -53,17 +50,21 @@ export function Home() {
     return (
       <div id="page-auth">
         <aside>
-          <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
+          <img src="https://cdn.havan.com.br/assets/images/hlabs-w.svg" alt="Ilustração do Havan Labs" className="havan-labs" />
           <strong>Crie salas de Q&amp;A ao-vivo</strong>
           <p>Tire as dúvidas da sua audiência em tempo-real</p>
         </aside>
         <main>
           <div className="main-content">
-            <img src={logoImg} alt="Letmeask" className="logo-img" />
-            <button onClick={handleCreateRoom} className="create-room google-button">
+            <div className="logo-img">
+              <img src="https://cdn.havan.com.br/assets/images/logo-havan-slim-b.svg" alt="HavanAsk" />
+              <h1 className="ask-logo">ASK</h1>
+            </div>
+            
+            {/*<button onClick={handleCreateRoom} className="create-room google-button">
               <img src={googleIconImg} alt="Logo da Google" />
               Crie sua sala com o Google
-            </button>
+            </button>*/}
             <button onClick={handleCreateRoom} className="create-room microsoft-button">
               <img src={microsoftIconImg} alt="Logo da Microsoft" />
               Crie sua sala com a Microsoft

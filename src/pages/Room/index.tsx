@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import logoImg from '../../assets/images/logo.svg';
+import logoImg from '../../assets/images/logo.png';
 import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
@@ -15,7 +15,7 @@ export function Room() {
   const params = useParams<RoomCodeProps>();
   const [newQuestion, setNewQuestion] = useState('');
   const user = useAuth().user;
-  const { title, questions } = useRoom(params.roomId);
+  const { title, questions, loading } = useRoom(params.roomId);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -55,6 +55,9 @@ export function Room() {
 
   return (
     <div id="page-room">
+    {
+      !loading ? 
+      <>
       <header>
         <div className="content">
           <img src={logoImg} alt="" />
@@ -122,6 +125,10 @@ export function Room() {
           })}
         </div>
       </main>
+      </>
+      : 
+      <h1>Loading</h1>
+    }
     </div>
   );
 }

@@ -4,19 +4,19 @@
   overflow: hidden;
 
   background: #FFF;
-  border: 1px solid #835afd;
+  border: 1px solid #1101ff;
   cursor: pointer;
 
   display: flex;
 
   div {
-    background: #835afd;
+    background: #1101ff;
     padding: 0 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     
-    min-height: 40px;
+    height: 100%;
   }
 
   span {
